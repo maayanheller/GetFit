@@ -104,8 +104,8 @@
                         <option value="fbw">Full Body Workout Split</option>
                         <option value="upperOrLower">Upper/Lower Workout Split</option>
                         <option value="ppl">Push/Pull/Legs Split</option>
-                        <option value="upperOrLower">Four-Day Workout Split</option>
-                        <option value="upperOrLower">Five-Day Workout Split</option>
+                        <option value="fourDay">Four-Day Workout Split</option>
+                        <option value="fiveDay">Five-Day Workout Split</option>
                     </select>
                 </td>
             </tr>
