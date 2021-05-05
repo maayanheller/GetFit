@@ -39,7 +39,7 @@
                         <input type="button" id="btnSignIn" value="Sign In" />
                     </td>
                     <td>
-                        <input type="button" id="btnRegister" value="Register" />
+                        <a href="RegisterPage.aspx">Register</a>
                     </td>
                 </tr>
             </table>
