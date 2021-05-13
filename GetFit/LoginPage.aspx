@@ -5,17 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title></title>
+        <style>
+            body {
+                text-align: center;
+                background-image: url("Pics/LiftingPlate.png");
+            }
+
+            form {
+                display: inline-block;
+                background-color: white;
+            }
+        </style>
     </head>
     <body>
         <form id="form1" runat="server">
             <table>
-                <tr>
-                    <td>
-                        <img src="Pics/Lifting Plate.png" height="142" width="162" />
-                    </td>
-                    <td></td>
-                </tr>
-
                 <tr>
                     <td>
                         <label>Name: </label>
@@ -36,7 +40,7 @@
 
                 <tr>
                     <td>
-                        <input type="button" id="btnSignIn" value="Log In" />
+                        <input type="submit" id="btnLogIn" name="btnLogIn" value="Log In" />
                     </td>
                     <td>
                         <a href="RegisterPage.aspx">Register</a>

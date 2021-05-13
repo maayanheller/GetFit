@@ -9,6 +9,18 @@ public partial class LoginPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        string name, tName, code, query;
 
+        if(Request.Form["btnLogIn"] != null)
+        {
+            name = Request.Form["txtName"];
+            code = Request.Form["txtPass"];
+
+            query = "SELECT name FROM tblLifters WHERE name='" + name + "' AND code='" + code + "'";
+
+            tName = DBFunctions.GetName(query);
+
+            Response.Write(tName);
+        }
     }
 }
