@@ -5,21 +5,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        table {
+           width: 50%;
+           background-color: rgba(255, 255, 255, .9);
+           margin: 0 auto;
+           position: relative;
+           padding: 5px;
+           margin-top: auto;
+           margin-bottom: auto;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+        
+        
+        }
+
+        .container::before {
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .container::after {
+            
+        }
+
+    </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div class="container">
+        <form id="form1" runat="server">
         <table>
-            <tr>
-                <td><img src="Pics/Lifting Plate.png" height="142" width="162" /></td>
-                <td></td>
-            </tr>
-
             <tr>
                 <td>
                     <label>Name: </label>
                 </td>
                 <td>
-                    <input type="text" id="txtName" name="txtName" />
+                    <input required="required" type="text" id="txtName" name="txtName" />
                 </td>
             </tr>
 
@@ -28,7 +60,7 @@
                     <label>Password: </label>
                 </td>
                 <td>
-                    <input type="password" id="txtPass" name="txtPass" />
+                    <input required="required" type="password" id="txtPass" name="txtPass" />
                 </td>
             </tr>
 
@@ -37,7 +69,7 @@
                     <label>Confirm Password: </label>
                 </td>
                 <td>
-                    <input type="password" id="txtConfirmPass" name="txtPass" />
+                    <input required="required" type="password" id="txtConfirmPass" name="txtPass" />
                 </td>
             </tr>
 
@@ -46,7 +78,7 @@
                     <label>Number Of Sets For Each Of The Big Muscles Groups: </label>
                 </td>
                 <td>
-                    <input type="number" id="numOfBigSets" name="txtName" />
+                    <input type="number" id="numOfBigSets" name="numOfBigSets" min="0" />
                 </td>
             </tr>
 
@@ -55,7 +87,7 @@
                     <label>Number Of Sets For Each Of The Small Muscles Groups: </label>
                 </td>
                 <td>
-                    <input type="number" id="numOfSmallSets" name="txtName" />
+                    <input type="number" id="numOfSmallSets" name="numOfSmallSets" min="0" />
                 </td>
             </tr>
 
@@ -112,7 +144,7 @@
 
             <tr>
                 <td>
-                    <input type="button" id="btnRegister" value="Register" />
+                    <input type="submit" id="btnRegister" name="btnRegister" value="Register" />
                 </td>
                 <td>
                     <a href="LoginPage.aspx">Sign In</a>
@@ -120,5 +152,7 @@
             </tr>
         </table>
     </form>
+    </div>
+    
 </body>
 </html>
