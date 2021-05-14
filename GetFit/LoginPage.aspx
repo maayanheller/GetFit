@@ -44,6 +44,8 @@
                     </td>
                     <td>
                         <a href="RegisterPage.aspx">Register</a>
+                        <label>Or </label>
+                        <a href="HomePage.aspx">Enter as a guest</a>
                     </td>
                 </tr>
             </table>

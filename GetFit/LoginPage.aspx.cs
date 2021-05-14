@@ -11,6 +11,8 @@ public partial class LoginPage : System.Web.UI.Page
     {
         string name, tName, code, query;
 
+        Session["tName"] = null;
+
         if(Request.Form["btnLogIn"] != null)
         {
             name = Request.Form["txtName"];
@@ -20,7 +22,9 @@ public partial class LoginPage : System.Web.UI.Page
 
             tName = DBFunctions.GetName(query);
 
-            Response.Write(tName);
+            Session["tName"] = tName;
+
+            Response.Redirect("./HomePage.aspx");
         }
     }
 }
