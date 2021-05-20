@@ -9,16 +9,46 @@
             body {
                 text-align: center;
                 background-image: url("Pics/LiftingPlate.png");
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: contain;
+            }
+
+            img {
+                margin-right: auto;
+                margin-left: auto;
+                position:absolute;
             }
 
             form {
                 display: inline-block;
                 background-color: white;
+                text-align: center;
+                background-position: center; 
+                position: relative;
             }
+
+            .center-image {
+                text-align: center;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: darkblue;
+            }
+
         </style>
     </head>
     <body>
         <form id="form1" runat="server">
+            <div class="center-image">
+                
+            </div>
             <table>
                 <tr>
                     <td>

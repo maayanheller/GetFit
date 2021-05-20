@@ -69,7 +69,7 @@
                     <label>Confirm Password: </label>
                 </td>
                 <td>
-                    <input required="required" type="password" id="txtConfirmPass" name="txtPass" />
+                    <input required="required" type="password" id="txtConfirmPass" />
                 </td>
             </tr>
 
@@ -136,8 +136,7 @@
                         <option value="fbw">Full Body Workout Split</option>
                         <option value="upperOrLower">Upper/Lower Workout Split</option>
                         <option value="ppl">Push/Pull/Legs Split</option>
-                        <option value="fourDay">Four-Day Workout Split</option>
-                        <option value="fiveDay">Five-Day Workout Split</option>
+                        <option value="bro">Bro Split</option>
                     </select>
                 </td>
             </tr>
