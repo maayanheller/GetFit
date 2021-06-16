@@ -7,7 +7,17 @@
     <title></title>
     <style>
         body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, .9);
+            min-width: 100vh;
+            min-height: 90vh;
         }
 
         .title {
@@ -21,11 +31,14 @@
             color: darkblue;
         }
 
+        .content {
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-
         <div>
             <asp:label id ="lblName" runat="server" />
             <a href="HomePage.aspx" class="home">Return to Home Page</a>
@@ -35,7 +48,7 @@
             <h1>
                 Bro Split
             </h1>
-
+            <div class="content">
             <p>
                 If you’ve ever considered lifting weights, then you’ve probably heard of the famous bro split. <br />
                 For decades, the bro split has been the golden standard for organizing our weekly training, and millions of people from all over the world praise the approach. <br />
@@ -98,6 +111,8 @@
                     By the time you do ten to sixteen sets for a given muscle group, it will be much weaker and less able to work productively. This might have some long-term muscle growth implications.
                 </li>
             </ul>
+
+          </div>
         </div>
     </form>
 </body>

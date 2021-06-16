@@ -6,9 +6,18 @@
 <head runat="server">
     <title></title>
     <style>
-
         body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, .9);
+            min-width: 100vh;
+            min-height: 90vh;
         }
 
         .title {
@@ -47,6 +56,9 @@
                 You need to do the workout 2-3 times a week, with at least one day of rest/active recovery between workout days. <br />
                 Usually, the workout is sorted by the size of the muscle group. For example: Legs first, Chest second, Back third, etc. <br />
                 The "Fullbody" is considered good for beginners because it's easy to persist with it due to the low number of workouts a week. <br />
+                The main reason most people should do full-body workouts over split workouts is time. <br />
+                Most people don't have enough time to dedicate an hour a day to exercising in the first place, let alone spend that much time on a single muscle group. <br /> 
+                Full-body workouts maximize your time, and instead of spending your one hour (or less) pumping up your biceps, you could be chasing real gains like whole-body strength, core stabilization, functional mobility and endurance. 
             </p>
 
             <p>

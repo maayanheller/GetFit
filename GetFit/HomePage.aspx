@@ -8,14 +8,22 @@
     <style>
         body {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            
         }
 
         .container {
             display: flex;
+            background-color: rgba(255, 255, 255, .9);
             flex-direction: column;
             flex-wrap: wrap;
             text-align: center;
             font-size: 50px;
+            min-width: 100vh;
+            min-height: 90vh;
         }
 
         .menu {

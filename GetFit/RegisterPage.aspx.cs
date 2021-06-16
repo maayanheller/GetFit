@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 
 public partial class RegisterPage : System.Web.UI.Page
 {
-   
     protected void Page_Load(object sender, EventArgs e)
     {
         String name, muscleGroup = "", workoutSplit = "", query, code;
@@ -39,6 +38,8 @@ public partial class RegisterPage : System.Web.UI.Page
             query = "INSERT INTO tblLifters ([name], [bigMusclesSets], [smallMusclesSets], [muscleGroup], [workoutSplit], [code]) VALUES('" + name + "', " + bigMusclesSets + ", " + smallMusclesSets + ", '" + muscleGroup + "', '" + workoutSplit + "', '" + code + "')";
 
             DBFunctions.RunNonQuery(query);
+
+            Response.Redirect("LoginPage.aspx");
         }
     }
 }

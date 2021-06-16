@@ -20,7 +20,7 @@ public partial class HomePage : System.Web.UI.Page
             tName = "Guest";
         }
 
-        lblName.Text = "Hi " + tName;
+        lblName.Text = "Hello " + tName;
 
         if(Request.Form["btnLogout"] != null)
         {

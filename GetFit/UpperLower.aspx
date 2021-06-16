@@ -7,7 +7,17 @@
     <title></title>
     <style>
         body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, .9);
+            min-width: 100vh;
+            min-height: 90vh;
         }
 
         .title {
@@ -19,6 +29,10 @@
             right: 10px;
             text-decoration: none;
             color: darkblue;
+        }
+
+        .content {
+            font-size: 20px;
         }
 
     </style>
@@ -36,7 +50,7 @@
             </h1>
         </div>
 
-        <div>
+        <div class="content">
             <p>
                The upper/lower split is among the most popular ways to organize your training. <br />
                The idea behind it is very simple: You split your training into upper body exercise days and lower body exercise days. <br />

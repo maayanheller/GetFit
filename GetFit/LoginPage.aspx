@@ -7,31 +7,18 @@
         <title></title>
         <style>
             body {
-                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
                 background-image: url("Pics/LiftingPlate.png");
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                background-size: contain;
+                background-position: 50% 50%;
             }
 
-            img {
-                margin-right: auto;
-                margin-left: auto;
-                position:absolute;
+            table {
+               padding: 5px;
             }
 
-            form {
-                display: inline-block;
-                background-color: white;
-                text-align: center;
-                background-position: center; 
-                position: relative;
-            }
-
-            .center-image {
-                text-align: center;
+            td {
+                text-align: left;
             }
 
             a {
@@ -42,13 +29,24 @@
                 color: darkblue;
             }
 
+            .container {
+                display: flex;
+                background-color: rgba(255, 255, 255, .9);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-width: 100vh;
+                min-height: 100vh;
+            }
+
         </style>
+
+        <script type="text/javascript" src="jsLoginPage.js"></script>
     </head>
     <body>
-        <form id="form1" runat="server">
-            <div class="center-image">
-                
-            </div>
+        <form id="form1" runat="server" onsubmit="return(validate('txtName', 'txtPass'))">
+            <div class="container">
+            <h1 class="title">Login to GetFit</h1>
             <table>
                 <tr>
                     <td>
@@ -79,6 +77,7 @@
                     </td>
                 </tr>
             </table>
+          </div>
         </form>
     </body>
 </html>

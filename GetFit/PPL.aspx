@@ -8,6 +8,16 @@
     <style>
         body {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            background-image: url("Pics/LiftingPlate.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, .9);
+            min-width: 100vh;
+            min-height: 90vh;
         }
 
         .home {
@@ -15,6 +25,10 @@
             right: 10px;
             text-decoration: none;
             color: darkblue;
+        }
+
+        .content {
+            font-size: 20px;
         }
 
     </style>
@@ -31,7 +45,7 @@
             <h1>"PPL" - Push Pull Legs</h1>
         </div>
 
-        <div>
+        <div class="content">
             <p>
                 A "PPL" split means to split your body into 3 parts:
             </p>

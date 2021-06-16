@@ -20,6 +20,6 @@ public partial class BroSplit : System.Web.UI.Page
             tName = "Guest";
         }
 
-        lblName.Text = "Hi " + tName;
+        lblName.Text = "Hello " + tName;
     }
 }

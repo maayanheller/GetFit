@@ -7,51 +7,46 @@
     <title></title>
     <style>
         table {
-           width: 50%;
-           background-color: rgba(255, 255, 255, .9);
-           margin: 0 auto;
-           position: relative;
            padding: 5px;
-           margin-top: auto;
-           margin-bottom: auto;
         }
 
         td {
             text-align: left;
         }
 
-        .container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
             background-image: url("Pics/LiftingPlate.png");
             background-repeat: no-repeat;
-            background-position: 50% 0;
-        
-        
+            background-position: 50% 50%;
         }
 
-        .container::before {
-            opacity: 0.6;
-            z-index: -1;
-        }
-
-        .container::after {
-            
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, .9);
+            align-items: center;
+            justify-content: center;
+            min-width: 100vh;
+            min-height: 100vh;
         }
 
     </style>
+
+    <script type="text/javascript" src="jsRegisterPage.js"></script>
 </head>
 <body>
     <div class="container">
-        <form id="form1" runat="server">
+        <h1 class="title">Register to GetFit</h1>
+        <form id="form1" runat="server" onsubmit="return(validate('txtName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))">
         <table>
             <tr>
                 <td>
                     <label>Name: </label>
                 </td>
                 <td>
-                    <input required="required" type="text" id="txtName" name="txtName" />
+                    <input type="text" id="txtName" name="txtName" />
                 </td>
             </tr>
 
@@ -60,7 +55,7 @@
                     <label>Password: </label>
                 </td>
                 <td>
-                    <input required="required" type="password" id="txtPass" name="txtPass" />
+                    <input type="password" id="txtPass" name="txtPass" />
                 </td>
             </tr>
 
@@ -69,7 +64,7 @@
                     <label>Confirm Password: </label>
                 </td>
                 <td>
-                    <input required="required" type="password" id="txtConfirmPass" />
+                    <input type="password" id="txtConfirmPass" />
                 </td>
             </tr>
 
@@ -132,7 +127,7 @@
                 </td>
                 <td>
                     <select id="workoutSplits" name="workoutSplits">
-                        <option value="none" />
+                        <option value="" />
                         <option value="fbw">Full Body Workout Split</option>
                         <option value="upperOrLower">Upper/Lower Workout Split</option>
                         <option value="ppl">Push/Pull/Legs Split</option>
