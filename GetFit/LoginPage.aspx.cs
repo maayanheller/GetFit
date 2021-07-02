@@ -10,21 +10,25 @@ public partial class LoginPage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string name, tName, code, query;
-
-        Session["tName"] = null;
-
-        if(Request.Form["btnLogIn"] != null)
+        errorMessage.Visible = false;
+        if (Request.Form["btnLogIn"] != null)
         {
             name = Request.Form["txtName"];
             code = Request.Form["txtPass"];
 
             query = "SELECT name FROM tblLifters WHERE name='" + name + "' AND code='" + code + "'";
-
             tName = DBFunctions.GetName(query);
 
-            Session["tName"] = tName;
+            if (tName == "")
+            {
+                 errorMessage.Visible = true;
+            }
 
-            Response.Redirect("./HomePage.aspx");
+            else
+            {
+                Session["tName"] = tName;
+                Response.Redirect("./HomePage.aspx");
+            }
         }
     }
 }

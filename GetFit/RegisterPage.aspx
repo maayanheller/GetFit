@@ -25,7 +25,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            background-color: rgba(255, 255, 255, .9);
+            background-color: rgba(255, 255, 255, .5);
             align-items: center;
             justify-content: center;
             min-width: 100vh;

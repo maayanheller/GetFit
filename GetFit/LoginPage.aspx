@@ -13,6 +13,10 @@
                 background-position: 50% 50%;
             }
 
+            .hidden {
+                color: red;
+            }
+
             table {
                padding: 5px;
             }
@@ -31,7 +35,7 @@
 
             .container {
                 display: flex;
-                background-color: rgba(255, 255, 255, .9);
+                background-color: rgba(255, 255, 255, .5);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -65,7 +69,12 @@
                         <input type="password" id="txtPass" name="txtPass" />
                     </td>
                 </tr>
-
+                <tr runat="server" id="errorMessage" visible="false" class="hidden">
+                    <td>
+                        User with this credentials doesn't exist
+                    </td>
+                    <td />
+                </tr>
                 <tr>
                     <td>
                         <input type="submit" id="btnLogIn" name="btnLogIn" value="Log In" />

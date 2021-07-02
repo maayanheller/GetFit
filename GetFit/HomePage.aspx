@@ -17,7 +17,7 @@
 
         .container {
             display: flex;
-            background-color: rgba(255, 255, 255, .9);
+            background-color: rgba(255, 255, 255, .5);
             flex-direction: column;
             flex-wrap: wrap;
             text-align: center;
