@@ -1,82 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="HomePage.aspx.cs" Inherits="HomePage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="HomePage.aspx.cs" Inherits="Pages_Default" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" href="../CSS_Files/styles.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+    <div class="title">
+        <h1>What are workout splits?</h1>
+    </div>
+    
+    <div class="content">
+        <p>
+            A workout split is simply a way of dividing your training sessions into different body regions.
+            Workout splits are typically used in weight lifting but they can be used in bodyweight training too. There is no ‘one size fits all’ for the best workout split.
+            Your training split depends on your goals, your training age, your schedule and how much time you want to be spending in the gym.
+        </p>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style>
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            letter-spacing: 1px;
-            background-image: url("Pics/LiftingPlate.png");
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            
-        }
+        <p>
+            Focusing on the legs and butt in one session and arms, back, and chest in another session is common. Abdominal training can fit in either session.
+            There are many possibole combinations in the world of weight lifting (also in bodyweight training), but int these blog has the most popular amongst them.
+        </p>
 
-        .container {
-            display: flex;
-            background-color: rgba(255, 255, 255, .5);
-            flex-direction: column;
-            flex-wrap: wrap;
-            text-align: center;
-            font-size: 50px;
-            min-width: 100vh;
-            min-height: 90vh;
-        }
+        <p>
+            Split system training is mostly used by bodybuilders or fitness trainers; professional powerlifters and Olympic lifters do not use this approach.
+        </p>
+    </div>
+    
+</asp:Content>
 
-        .menu {
-            font-size: 18px;
-        }
-
-        .link {
-            flex-grow: 1;
-            padding: 1em;
-        }
-
-        input {
-            width: 100px;
-            font-size: 18px;
-        }
-
-        a {
-            text-decoration: none;
-            color: darkblue;
-        }
-
-        #btnLogout {
-            position: absolute;
-            right: 10px;
-        }
-
-
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="menu">
-            <asp:label id ="lblName" runat="server" />
-            <input type="submit" id="btnLogout" name="btnLogout" value="Logout" />
-        </div>
-
-        <div class="container">
-            <div class="link">
-                <a href="Fullbody.aspx">Fullbody</a>
-            </div>
-            
-            <div class="link">
-                <a href="PPL.aspx">PPL</a>
-            </div>
-            
-            <div class="link">
-                <a href="UpperLower.aspx">Upper/Lower</a>
-            </div>
-
-            <div class="link">
-                <a href="BroSplit.aspx">Bro Split</a>
-            </div>
-        </div>
-    </form>
-</body>
-</html>

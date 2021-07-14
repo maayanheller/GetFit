@@ -1,51 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PPL.aspx.cs" Inherits="PPL" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="PPL.aspx.cs" Inherits="Pages_Default" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" href="../CSS_Files/styles.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="title">
+       <h1>"PPL" - Push Pull Legs</h1>
+    </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style>
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            letter-spacing: 1px;
-            background-image: url("Pics/LiftingPlate.png");
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
-
-        form {
-            background-color: rgba(255, 255, 255, .5);
-            min-width: 100vh;
-            min-height: 90vh;
-        }
-
-        .home {
-            position: absolute;
-            right: 10px;
-            text-decoration: none;
-            color: darkblue;
-        }
-
-        .content {
-            font-size: 20px;
-        }
-
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-
-        <div>
-            <asp:label id ="lblName" runat="server" />
-            <a href="HomePage.aspx" class="home">Return to Home Page</a>
-        </div>
-
-        <div>
-            <h1>"PPL" - Push Pull Legs</h1>
-        </div>
-
-        <div class="content">
+    <div class="content">
             <p>
                 A "PPL" split means to split your body into 3 parts:
             </p>
@@ -125,6 +88,5 @@
             </ul>
 
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

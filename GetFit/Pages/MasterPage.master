@@ -5,16 +5,63 @@
 <html>
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="../CSS_Files/MasterPage.css" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    <header>
+        <div>
+            <asp:label id ="lblName" runat="server" />
+            
+            <span id="authSuggestion" runat="server">
+                <a href="LoginPage.aspx" class="">Login</a>
+                /
+                <a href="RegisterPage.aspx">Register</a>
+            </span>
+            
+        </div>
+        <h1>
+            <a href="HomePage.aspx">Get Fit</a>
+        </h1>
+        <img height="80" src="../Pics/Icon.PNG" />
+    </header>       
+    <div class="menu">
+        <a class="item" href="Fullbody.aspx">
+           Fullbody
+        </a> 
         
-        </asp:ContentPlaceHolder>
+        <a class="item" href="UpperLower.aspx">
+            Upper/Lower
+        </a>
+
+        <a class="item" href="PPL.aspx">
+            PPL
+        </a>
+
+        <a class="item" href="BroSplit.aspx">
+            Bro Split
+        </a>
+
+        <a class="item">
+            About
+        </a>
+
+        <a class="item">
+            Gallery
+        </a>
     </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <div>
+                
+            </div>
+        </asp:ContentPlaceHolder>
+    
+    <footer>
+        <a href="#">Back to top</a>
+        <span class="right">&#169; All rights reserved to Maayan Heller</span>
+    </footer>
     </form>
 </body>
 </html>
