@@ -8,6 +8,18 @@ a {
     color: black;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+}
+
+.form-item {
+    flex-grow: 1;
+    text-align: left;
+}
+
 .content {
     font-size: 20px;
     margin: 0 10%;
@@ -16,4 +28,13 @@ a {
 
 .title {
     text-align: center;
+}
+
+.gallery-img {
+    width: 30em;
+    height: 20em;
+}
+
+.img-container {
+    text-align: center
 }

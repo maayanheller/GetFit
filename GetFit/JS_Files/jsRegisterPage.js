@@ -19,6 +19,10 @@ function validate(nameId, password, passwordConfirm, bigMuscleSets, smallMuscleS
         return false;
     }
 
+    if (isNumeric(name)) {
+        alert("Name should not contain numbers")
+    }
+
     if (pass.value != passConf.value) {
         alert("Please check your password match!");
         return false;
@@ -43,4 +47,8 @@ function validate(nameId, password, passwordConfirm, bigMuscleSets, smallMuscleS
         alert("Please enter your current workout split");
         return false;
     }
+}
+
+function isNumeric(num) {
+    return !isNan(num);
 }

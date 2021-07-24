@@ -8,9 +8,6 @@
         <style>
             body {
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-                background-image: url("Pics/LiftingPlate.png");
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
             }
 
             .hidden {

@@ -38,6 +38,6 @@ header {
     float: left;
 }
 
-#authSuggestion {
+.login-logout {
     float: right;
 }

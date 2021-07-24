@@ -15,17 +15,19 @@
         <div>
             <asp:label id ="lblName" runat="server" />
             
-            <span id="authSuggestion" runat="server">
+            <span id="authSuggestion" class="login-logout" runat="server">
                 <a href="LoginPage.aspx" class="">Login</a>
                 /
                 <a href="RegisterPage.aspx">Register</a>
             </span>
+
+            <asp:Button OnClick="Logout" runat="server" id="logout" class="login-logout" Text="Logout" />
             
         </div>
         <h1>
             <a href="HomePage.aspx">Get Fit</a>
         </h1>
-        <img height="80" src="../Pics/Icon.PNG" />
+        <img height="80" src="../Images/Icon.PNG" />
     </header>       
     <div class="menu">
         <a class="item" href="Fullbody.aspx">
@@ -48,7 +50,7 @@
             About
         </a>
 
-        <a class="item">
+        <a class="item" href="Gallery.aspx">
             Gallery
         </a>
     </div>
