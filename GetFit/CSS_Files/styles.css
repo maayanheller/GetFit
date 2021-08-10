@@ -30,6 +30,10 @@ a {
     text-align: center;
 }
 
+table {
+    margin: 2em auto;
+}
+
 .gallery-img {
     width: 30em;
     height: 20em;
