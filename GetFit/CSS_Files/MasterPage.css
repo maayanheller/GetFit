@@ -1,5 +1,5 @@
 ﻿footer {
-    position: relative;
+    position: absolute;
     bottom: 0px;
     width: 100%;
     height: 2.5rem;
@@ -37,7 +37,7 @@ header {
 .page-container {
     position: relative;
     min-height: 100vh;
-    overflow-y: no-display;
+    overflow-x: no-display;
 }
 
 .login-logout {
@@ -46,6 +46,10 @@ header {
 
 .website-title {
     text-align: center
+}
+
+.website-title a {
+    margin-left: 1em;
 }
 
 #lblName {

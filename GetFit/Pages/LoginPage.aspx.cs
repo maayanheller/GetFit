@@ -5,23 +5,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class LoginPage : System.Web.UI.Page
+public partial class Pages_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string name, tName, code, query;
+        string username, tName, code, query;
         errorMessage.Visible = false;
         if (Request.Form["btnLogIn"] != null)
         {
-            name = Request.Form["txtName"];
+            username = Request.Form["txtUsername"];
             code = Request.Form["txtPass"];
 
-            query = "SELECT name FROM tblLifters WHERE name='" + name + "' AND code='" + code + "'";
+            query = "SELECT username FROM tblLifters WHERE username='" + username + "' AND code='" + code + "'";
             tName = DBFunctions.GetName(query);
 
             if (tName == "")
             {
-                 errorMessage.Visible = true;
+                errorMessage.Visible = true;
             }
 
             else

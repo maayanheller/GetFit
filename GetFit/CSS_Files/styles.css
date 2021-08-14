@@ -8,16 +8,32 @@ a {
     color: black;
 }
 
-.form-container {
+.form-items-container {
     display: flex;
+    margin: 0 auto;
+    width: 50%;
     flex-direction: column;
-    text-align: justify;
     align-items: center;
 }
 
+
 .form-item {
-    flex-grow: 1;
+    flex-grow: 4;
+    margin: 10px;
     text-align: left;
+    width: 100%;
+}
+
+.input-name {
+    float: left;
+}
+
+.radio-inputs {
+    margin-right: 5em;
+}
+
+.radio-inputs, input:not([type=radio]), select {
+    float: right;
 }
 
 .content {

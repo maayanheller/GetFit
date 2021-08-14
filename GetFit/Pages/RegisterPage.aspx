@@ -1,94 +1,50 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegisterPage.aspx.cs" Inherits="RegisterPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="RegisterPage.aspx.cs" Inherits="Pages_Default" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+        <link rel="stylesheet" href="../CSS_Files/styles.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <h1 class="title">Register to GetFit</h1>
+    <form id="form1" runat="server" action="RegisterPage.aspx" method="post" onsubmit="return(validate('txtUsername', 'txtFirstName', 'txtLastName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))">
+        <div class="form-items-container">
+            <div class="form-item">
+                <label class="input-name">Username: </label>
+                <input type="text" id="txtUsername" name="txtUsername" />
+            </div>
+        
+            <div class="form-item">
+                <label class="input-name">First Name: </label>
+                <input type="text" id="txtFirstName" name="txtFirstName" />
+            </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style>
-        table {
-           padding: 5px;
-        }
+            <div class="form-item">
+                <label class="input-name">Last Name: </label>
+                <input type="text" id="txtLastName" name="txtLastName" />
+            </div>
 
-        td {
-            text-align: left;
-        }
+            <div class="form-item">
+                <label class="input-name">Password: </label>
+                <input type="password" id="txtPass" name="txtPass" />
+            </div>
 
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            letter-spacing: 1px;
-        }
+            <div class="form-item">
+                <label class="input-name">Confirm Password: </label>
+                <input type="password" id="txtConfirmPass" />
+            </div>
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255, .5);
-            align-items: center;
-            justify-content: center;
-            min-width: 100vh;
-            min-height: 100vh;
-        }
+            <div class="form-item">
+                <label class="input-name">Number Of Sets For Each Of The Big Muscles Groups: </label>
+                <input type="number" id="numOfBigSets" name="numOfBigSets" min="0" />
+            </div>
 
-    </style>
+            <div class="form-item">
+                <label class="input-name">Number Of Sets For Each Of The Small Muscles Groups: </label>
+                <input type="number" id="numOfSmallSets" name="numOfSmallSets" min="0" />
+            </div>
 
-    <script type="text/javascript" src="jsRegisterPage.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h1 class="title">Register to GetFit</h1>
-        <form id="form1" runat="server" onsubmit="return(validate('txtName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))">
-        <table>
-            <tr>
-                <td>
-                    <label>Name: </label>
-                </td>
-                <td>
-                    <input type="text" id="txtName" name="txtName" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <label>Password: </label>
-                </td>
-                <td>
-                    <input type="password" id="txtPass" name="txtPass" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <label>Confirm Password: </label>
-                </td>
-                <td>
-                    <input type="password" id="txtConfirmPass" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <label>Number Of Sets For Each Of The Big Muscles Groups: </label>
-                </td>
-                <td>
-                    <input type="number" id="numOfBigSets" name="numOfBigSets" min="0" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <label>Number Of Sets For Each Of The Small Muscles Groups: </label>
-                </td>
-                <td>
-                    <input type="number" id="numOfSmallSets" name="numOfSmallSets" min="0" />
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <label>Favourite Muscle Group: </label>
-                </td>
-                
-                <td>
+            <div class="form-item">
+                <label class="input-name">Favourite Muscle Group: </label>
+                <div class="radio-inputs">
                     <input type="radio" name="muscleGroup" id="legs" value="legs" />
                     <label>Legs</label>
                     <br />
@@ -115,35 +71,29 @@
 
                     <input type="radio" name="muscleGroup" id="abs" value="abs" />
                     <label>Abs</label>
-                </td>
-            </tr>
+                </div>
+            </div>
 
-            <tr>
-                <td>
-                    <label>Type Of Workout Split: </label>
-                </td>
-                <td>
-                    <select id="workoutSplits" name="workoutSplits">
-                        <option value="" />
-                        <option value="fbw">Full Body Workout Split</option>
-                        <option value="upperOrLower">Upper/Lower Workout Split</option>
-                        <option value="ppl">Push/Pull/Legs Split</option>
-                        <option value="bro">Bro Split</option>
-                    </select>
-                </td>
-            </tr>
+            <div class="form-item">
+                <label class="input-name">Type Of Workout Split: </label>
 
-            <tr>
-                <td>
-                    <input type="submit" id="btnRegister" name="btnRegister" value="Register" />
-                </td>
-                <td>
-                    <a href="LoginPage.aspx">Sign In</a>
-                </td>
-            </tr>
-        </table>
+                <select id="workoutSplits" name="workoutSplits">
+                    <option value="" />
+                    <option value="fbw">Full Body Workout Split</option>
+                    <option value="upperOrLower">Upper/Lower Workout Split</option>
+                    <option value="ppl">Push/Pull/Legs Split</option>
+                    <option value="bro">Bro Split</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <input type="submit" id="btnRegister" name="btnRegister" value="Register" />
+
+                <a href="LoginPage.aspx">Sign In</a>
+            </div>
+        </div>
     </form>
-    </div>
-    
-</body>
-</html>
+
+    <script type="text/javascript" src="../JS_Files/jsRegisterPage.js"></script>
+</asp:Content>
+

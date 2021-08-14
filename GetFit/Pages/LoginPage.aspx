@@ -1,89 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoginPage.aspx.cs" Inherits="LoginPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="LoginPage.aspx.cs" Inherits="Pages_Default" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <title></title>
-        <style>
-            body {
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-            }
-
-            .hidden {
-                color: red;
-            }
-
-            table {
-               padding: 5px;
-            }
-
-            td {
-                text-align: left;
-            }
-
-            a {
-                text-decoration: none;
-            }
-
-            a:visited {
-                color: darkblue;
-            }
-
-            .container {
-                display: flex;
-                background-color: rgba(255, 255, 255, .5);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-width: 100vh;
-                min-height: 100vh;
-            }
-
-        </style>
-
-        <script type="text/javascript" src="jsLoginPage.js"></script>
-    </head>
-    <body>
-        <form id="form1" runat="server" onsubmit="return(validate('txtName', 'txtPass'))">
-            <div class="container">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" href="../CSS_Files/styles.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <form id="form1" action="LoginPage.aspx" method="post" runat="server" onsubmit="return(validate('txtUsername', 'txtPass'))">
+        <div class="form-items-container">
             <h1 class="title">Login to GetFit</h1>
-            <table>
-                <tr>
-                    <td>
-                        <label>Name: </label>
-                    </td>
-                    <td>
-                        <input type="text" id="txtName" name="txtName" />
-                    </td>
-                </tr>
+            <div class="form-item">
+                <label>Username: </label>
+                <input type="text" id="txtUsername" name="txtUsername" />
+            </div>
+            
+            <div class="form-item">
+                <label>Password: </label>
+                <input type="password" id="txtPass" name="txtPass" />
+            </div>
+            <span runat="server" id="errorMessage" visible="false" class="hidden">
+                User with this credentials doesn't exist
+            </span>
+            <div class="form-item">
+                <input type="submit" id="btnLogIn" name="btnLogIn" value="Log In" />
+                <a href="HomePage.aspx">Enter as a guest</a>
+            </div>    
+        </div>
+    </form>
+    <script type="text/javascript" src="../JS_Files/jsLoginPage.js"></script>
+</asp:Content>
 
-                <tr>
-                    <td>
-                        <label>Password: </label>
-                    </td>
-                    <td>
-                        <input type="password" id="txtPass" name="txtPass" />
-                    </td>
-                </tr>
-                <tr runat="server" id="errorMessage" visible="false" class="hidden">
-                    <td>
-                        User with this credentials doesn't exist
-                    </td>
-                    <td />
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" id="btnLogIn" name="btnLogIn" value="Log In" />
-                    </td>
-                    <td>
-                        <a href="RegisterPage.aspx">Register</a>
-                        <label>Or </label>
-                        <a href="HomePage.aspx">Enter as a guest</a>
-                    </td>
-                </tr>
-            </table>
-          </div>
-        </form>
-    </body>
-</html>

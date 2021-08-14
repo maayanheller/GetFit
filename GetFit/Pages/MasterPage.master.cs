@@ -24,7 +24,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
             logout.Visible = false;
         }
 
+
         lblName.Text = "Hello " + tName;
+
+        
     }
 
     protected void Logout(Object sender, EventArgs e)

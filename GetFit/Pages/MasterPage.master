@@ -4,13 +4,13 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>GetFit</title>
     <link rel="stylesheet" href="../CSS_Files/MasterPage.css" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div class="page-container">
     <header>
         <div>
             <asp:label id ="lblName" runat="server" />
@@ -20,14 +20,12 @@
                 /
                 <a href="RegisterPage.aspx">Register</a>
             </span>
-
-            <asp:Button OnClick="Logout" runat="server" id="logout" class="login-logout" Text="Logout" />
-            
+            <button runat="server" onclick="Logout" id="logout" class="login-logout">Logout</button>
         </div>
-        <h1>
-            <a href="HomePage.aspx">Get Fit</a>
-        </h1>
-        <img height="80" src="../Images/Icon.PNG" />
+        <div class="website-title">
+            <h1><a href="HomePage.aspx">Get Fit</a></h1>
+            <img height="80" src="../Images/Icon.PNG" />
+        </div>
     </header>       
     <div class="menu">
         <a class="item" href="Fullbody.aspx">
@@ -46,7 +44,7 @@
             Bro Split
         </a>
 
-        <a class="item">
+        <a class="item" href="About.aspx">
             About
         </a>
 
@@ -60,10 +58,10 @@
             </div>
         </asp:ContentPlaceHolder>
     
-    <footer>
-        <a href="#">Back to top</a>
-        <span class="right">&#169; All rights reserved to Maayan Heller</span>
-    </footer>
-    </form>
+        <footer>
+            <a href="#">Back to top</a>
+            <span class="right">&#169; All rights reserved to Maayan Heller</span>
+        </footer>
+    </div>
 </body>
 </html>
