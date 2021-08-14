@@ -9,13 +9,18 @@ public partial class Pages_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string username, tName, code, query;
-        errorMessage.Visible = false;
-        if (Request.Form["btnLogIn"] != null)
-        {
-            username = Request.Form["txtUsername"];
-            code = Request.Form["txtPass"];
+        string tName, query;
+        string username = Request.Form["txtUsername"];
+        string code = Request.Form["txtPass"];
 
+        if(Session["tName"] != null)
+        {
+            Response.Redirect("Homepage.aspx");
+        }
+
+        errorMessage.Visible = false;
+        if (username != null && code != null)
+        {            
             query = "SELECT username FROM tblLifters WHERE username='" + username + "' AND code='" + code + "'";
             tName = DBFunctions.GetName(query);
 

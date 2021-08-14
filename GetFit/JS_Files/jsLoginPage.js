@@ -4,7 +4,7 @@
 
     username = document.getElementById(usernameId);
     pass = document.getElementById(password);
-
+    
     if (username.value.trim() == "") {
         alert("Please provide your name");
         return false;

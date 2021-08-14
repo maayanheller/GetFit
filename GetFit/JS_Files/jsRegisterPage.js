@@ -21,10 +21,6 @@ function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm
         return false;
     }
 
-    if (doesContainNumber(username.value)) {
-        alert("Username should not contain numbers!")
-    }
-
     if (firstName.value.trim() == "") {
         alert("Please provide first name!")
     }

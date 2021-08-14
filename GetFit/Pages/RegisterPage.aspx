@@ -5,7 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1 class="title">Register to GetFit</h1>
-    <form id="form1" runat="server" action="RegisterPage.aspx" method="post" onsubmit="return(validate('txtUsername', 'txtFirstName', 'txtLastName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))">
         <div class="form-items-container">
             <div class="form-item">
                 <label class="input-name">Username: </label>
@@ -87,12 +86,11 @@
             </div>
 
             <div class="form-item">
-                <input type="submit" id="btnRegister" name="btnRegister" value="Register" />
+                <asp:Button id="btnRegister" runat="server" name="btnRegister" Text="Register" OnClientClick="return(validate('txtUsername', 'txtFirstName', 'txtLastName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))" />
 
                 <a href="LoginPage.aspx">Sign In</a>
             </div>
         </div>
-    </form>
 
     <script type="text/javascript" src="../JS_Files/jsRegisterPage.js"></script>
 </asp:Content>
