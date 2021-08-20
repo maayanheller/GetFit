@@ -44,12 +44,12 @@
             Bro Split
         </a>
 
-        <a class="item" href="About.aspx">
-            About
-        </a>
-
         <a class="item" href="Gallery.aspx">
             Gallery
+        </a>
+
+        <a class="item" href="About.aspx">
+            About
         </a>
     </div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

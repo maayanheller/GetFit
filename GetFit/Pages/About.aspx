@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="../CSS_Files/styles.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <h1 class="title">
+        About
+    </h1>
     <p>
         I chose the website theme because of my high interest in the field of weight lifting. <br />
         When I started with weight lifting, I didn't have lots of info about building a routine and what should I do while I am in the gym. <br />
@@ -20,10 +23,16 @@
             Gender: Male
         </li>
         <li>
+            City: Kfar Sava
+        </li>
+        <li>
+            School: Rabin
+        </li>
+        <li>
             Class: יא-9
         </li>
         <li>
-            City: Kfar Sava
+            Hobbies: Lifting, Coding, Video Games, Music
         </li>
     </ul>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9O8mOtdKr44" allowfullscreen></iframe>

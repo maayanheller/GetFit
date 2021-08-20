@@ -15,11 +15,12 @@
                 <label>Password: </label>
                 <input type="password" id="txtPass" name="txtPass" />
             </div>
-            <span runat="server" id="errorMessage" visible="false" class="hidden">
+            <span runat="server" id="errorMessage" visible="false" class="hidden-error-message">
                 User with this credentials doesn't exist
             </span>
             <div class="form-item">
                 <asp:Button id="btnLogIn" runat="server" name="btnLogIn" Text="Log In" OnClientClick="return validate('txtUsername', 'txtPass')" />
+                <a href="HomePage.aspx">Enter as a guest</a>
             </div>    
         </div>
     <script type="text/javascript" src="../JS_Files/jsLoginPage.js"></script>

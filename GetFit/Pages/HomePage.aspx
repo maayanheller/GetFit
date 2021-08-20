@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     <div class="title">
-        <h1>What are workout splits?</h1>
+        <h1>Home Page - What are workout splits?</h1>
     </div>
     
     <div class="content">

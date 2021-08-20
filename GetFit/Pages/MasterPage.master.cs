@@ -9,30 +9,31 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string tName;
-        if (Session["tName"] != null)
+        string UserName;
+        if (Session["UserName"] != null)
         {
-            tName = (string)Session["tName"];
+            UserName = (string)Session["UserName"];
             authSuggestion.Visible = false;
             logout.Visible = true;
         }
 
         else
         {
-            tName = "Guest";
+            UserName = "Guest";
             authSuggestion.Visible = true;
             logout.Visible = false;
         }
 
 
-        lblName.Text = "Hello " + tName;
-
-        
+        lblName.Text = "Hello " + UserName;  
     }
 
     protected void Logout(Object sender, EventArgs e)
     {
         Session.Abandon();
-        Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
+        HttpCookie userCookie = Request.Cookies["siteLogin"];
+        userCookie.Expires = DateTime.Now.AddDays(-1);
+        Response.Cookies.Add(userCookie);
+        Response.Redirect("LoginPage.aspx");
     }
 }

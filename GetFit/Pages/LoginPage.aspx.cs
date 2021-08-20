@@ -9,29 +9,36 @@ public partial class Pages_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string tName, query;
+        string UserName, query;
         string username = Request.Form["txtUsername"];
         string code = Request.Form["txtPass"];
 
-        if(Session["tName"] != null)
+        if (Request.Cookies["siteLogin"] != null)
         {
+            Session["UserName"] = Request.Cookies["siteLogin"].Value;
             Response.Redirect("Homepage.aspx");
         }
 
-        errorMessage.Visible = false;
+        
         if (username != null && code != null)
         {            
             query = "SELECT username FROM tblLifters WHERE username='" + username + "' AND code='" + code + "'";
-            tName = DBFunctions.GetName(query);
+            UserName = DBFunctions.GetName(query);
 
-            if (tName == "")
+            if (UserName == "")
             {
                 errorMessage.Visible = true;
             }
 
             else
             {
-                Session["tName"] = tName;
+                Session["UserName"] = UserName;
+                HttpCookie userCookie = new HttpCookie("siteLogin");
+
+                userCookie.Value = Session["UserName"].ToString();
+                userCookie.Expires = DateTime.Now.AddDays(7);
+                Response.Cookies.Add(userCookie);
+
                 Response.Redirect("./HomePage.aspx");
             }
         }
