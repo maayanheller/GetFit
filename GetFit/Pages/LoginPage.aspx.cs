@@ -21,7 +21,8 @@ public partial class Pages_Default : System.Web.UI.Page
 
         
         if (username != null && code != null)
-        {            
+        {   
+            // Search in DB a User with the entered username and code
             query = "SELECT username FROM tblLifters WHERE username='" + username + "' AND code='" + code + "'";
             UserName = DBFunctions.GetName(query);
 
@@ -32,6 +33,9 @@ public partial class Pages_Default : System.Web.UI.Page
 
             else
             {
+                // Set the session to the found username in the database,
+                // Create a cookie and save the username into it, Then redirect to homepage
+
                 Session["UserName"] = UserName;
                 HttpCookie userCookie = new HttpCookie("siteLogin");
 

@@ -30,6 +30,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Logout(Object sender, EventArgs e)
     {
+        // Kill the session, delete the cookie and redirect to login
         Session.Abandon();
         HttpCookie userCookie = Request.Cookies["siteLogin"];
         userCookie.Expires = DateTime.Now.AddDays(-1);
