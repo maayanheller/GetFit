@@ -61,9 +61,17 @@ a {
 /*==============Content Pages==============*/
 
 /*==============Gallery==============*/
+.img-container {
+    text-align: center;
+    position: relative;
+}
 
 table {
     margin: 0 auto;
+}
+
+.gallery-container {
+    padding-bottom: 40px;
 }
 
 .gallery-img {
@@ -71,8 +79,31 @@ table {
     height: 20em;
 }
 
-.img-container {
-    text-align: center
+.linkable-images {
+    border-style: solid;
+    border-color: blue;
+}
+
+.hidden-text {
+    display: none;
+    position: absolute;
+}
+
+.img-container:hover .hidden-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    color: white;
+    font-size: 20px;    
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+}
+
+.hidden-text a{
+    color: white;
 }
 
 /*==============Gallery==============*/

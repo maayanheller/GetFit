@@ -15,7 +15,7 @@
                 <label>Password: </label>
                 <input type="password" id="txtPass" name="txtPass" />
             </div>
-            <span runat="server" id="errorMessage" visible="false" class="hidden-error-message">
+            <span runat="server" id="login_error_message" visible="false" class="hidden-error-message">
                 User with this credentials doesn't exist
             </span>
             <div class="form-item">

@@ -36,5 +36,7 @@
         </li>
     </ul>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9O8mOtdKr44" allowfullscreen></iframe>
+    <br />
+    For more info about gyms in kfar sava click <a href="https://www.t.co.il/706-s665-%D7%9E%D7%9B%D7%95%D7%A0%D7%99+%D7%9B%D7%95%D7%A9%D7%A8+%2F+%D7%97%D7%93%D7%A8%D7%99+%D7%9B%D7%95%D7%A9%D7%A8-%D7%9B%D7%A4%D7%A8+%D7%A1%D7%91%D7%90.html">here</a>
 </asp:Content>
 

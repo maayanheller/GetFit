@@ -34,7 +34,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Session.Abandon();
         HttpCookie userCookie = Request.Cookies["siteLogin"];
         userCookie.Expires = DateTime.Now.AddDays(-1);
-        Response.Cookies.Add(userCookie);
+        Response.Cookies.Add(userCookie);            
         Response.Redirect("LoginPage.aspx");
     }
 }

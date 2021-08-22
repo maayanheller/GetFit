@@ -1,7 +1,6 @@
 ﻿function validate(usernameId, password) {
     var username;
     var pass;
-
     username = document.getElementById(usernameId);
     pass = document.getElementById(password);
     
@@ -19,5 +18,6 @@
         alert("Your password should be at least 6 charachters long!");
         return false;
     }
-
+    // All valid
+    return true;
 }

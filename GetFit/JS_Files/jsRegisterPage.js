@@ -1,81 +1,90 @@
 ﻿// Validate all fields on registration field
 function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm, bigMuscleSets, smallMuscleSets, workoutSplit) {
 
-    var username = document.getElementById(usernameId);
-    var firstName = document.getElementById(firstNameId);
-    var lastName = document.getElementById(lastNameId);
-    var pass = document.getElementById(password);
-    var passConf = document.getElementById(passwordConfirm);
-    var bigMuscles = document.getElementById(bigMuscleSets);
-    var smallMuscles = document.getElementById(smallMuscleSets);
-    var workSplit = document.getElementById(workoutSplit);
+    var username = document.getElementById(usernameId).value;
+    var firstName = document.getElementById(firstNameId).value;
+    var lastName = document.getElementById(lastNameId).value;
+    var pass = document.getElementById(password).value;
+    var passConf = document.getElementById(passwordConfirm).value;
+    var bigMuscles = document.getElementById(bigMuscleSets).value;
+    var smallMuscles = document.getElementById(smallMuscleSets).value;
+    var workSplit = document.getElementById(workoutSplit).value;
 
-    if (username.value.trim() == "") {
+    if (username.trim() == "") {
         console.log("name not provided");
         alert("Please provide your username!");
         return false;
     }
 
-    if (username.value.trim().length <= 2) {
+    if (username.trim().length <= 2) {
         alert("Username should be longer than 2 charachters!");
         return false;
     }
 
-    if (firstName.value.trim() == "") {
+    if (NoSpecialKey(username.trim())) {
+        alert("Username should not contain special keys!")
+        return false;
+    }
+
+    if (firstName.trim() == "") {
         alert("Please provide first name!")
+        return false;
     }
 
-    if (doesContainNumber(firstName.value)) {
-        alert("First name should not contain numbers!")
+    if (onlyEnglishLetters(firstName.trim())) {
+        alert("First name should contain only letters!")
+        return false;
     }
 
-    if (lastName.value.trim() == "") {
+    if (lastName.trim() == "") {
         alert("Please provide last name!")
+        return false;
     }
 
-    if (doesContainNumber(lastName.value)) {
-        alert("Last name should not contain numbers!")
+    if (onlyEnglishLetters(lastName.trim())) {
+        alert("Last name should contain only letters!");
+        return false;
     }
 
-    if (pass.value.trim() == "") {
+    if (pass.trim() == "") {
         alert("Please provide password!");
         return false;
     }
 
-    if (pass.value.trim() < 6) {
+    if (pass.length < 6) {
         alert("Your password should be at least 6 charachters long!");
         return false;
     }
 
-    if (pass.value != passConf.value) {
+    if (pass != passConf) {
         alert("Please check your password match!");
         return false;
     }
     
-    if (bigMuscles.value == "") {
+    if (bigMuscles == "") {
         alert("Please enter how much sets you do for big muscles!");
         return false;
     }
 
-    if (smallMuscles.value == "") {
+    if (smallMuscles == "") {
         alert("Please enter how much sets you do for small muscles!");
         return false;
     }
 
-    if (workSplit.value == "") {
+    if (workSplit == "") {
         alert("Please enter your current workout split");
         return false;
     }
+    // All valid
+    return true;
 }
 
-function doesContainNumber(value) {
-    contains = false;
-    for (let i = 0; i < value.length; i++) {
-        if (!isNaN(value[i])) {
-            contains = true;
-            break;
-        }
-    }
+function onlyEnglishLetters(value) {
+    const reg = /^[a-zA-Z]+$/
+    return !reg.test(value);
+}
 
-    return contains;
+function NoSpecialKey(value) {
+    const reg = /^[a-zA-z0-9._]+$/
+    return !reg.test(value);
 }

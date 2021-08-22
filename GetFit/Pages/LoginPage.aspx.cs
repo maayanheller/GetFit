@@ -9,8 +9,16 @@ public partial class Pages_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string UserName, query;
-        string username = Request.Form["txtUsername"];
+        if(IsPostBack)
+        {
+            Login();
+        }
+    }
+
+    protected void Login()
+    {
+        string query;
+        string UserName = Request.Form["txtUserName"];
         string code = Request.Form["txtPass"];
 
         if (Request.Cookies["siteLogin"] != null)
@@ -19,16 +27,15 @@ public partial class Pages_Default : System.Web.UI.Page
             Response.Redirect("Homepage.aspx");
         }
 
-        
-        if (username != null && code != null)
-        {   
-            // Search in DB a User with the entered username and code
-            query = "SELECT username FROM tblLifters WHERE username='" + username + "' AND code='" + code + "'";
-            UserName = DBFunctions.GetName(query);
 
-            if (UserName == "")
+        if (UserName != null && code != null)
+        {
+            // Search in DB a User with the entered UserName and code
+            query = "SELECT UserName FROM tblLifters WHERE UserName='" + UserName.Trim() + "' AND code='" + code + "'";
+
+            if (DBFunctions.doesUsernameExists(query))
             {
-                errorMessage.Visible = true;
+                login_error_message.Visible = true;
             }
 
             else

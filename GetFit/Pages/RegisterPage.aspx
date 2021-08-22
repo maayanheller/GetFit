@@ -84,11 +84,18 @@
                     <option value="bro">Bro Split</option>
                 </select>
             </div>
-
+            <div class="form-item">
+                <span runat="server" id="register_error_message" visible="false" class="hidden-error-message">
+                    User with this credentials already exists
+                </span>
+            </div>
             <div class="form-item">
                 <asp:Button id="btnRegister" runat="server" name="btnRegister" Text="Register" OnClientClick="return(validate('txtUsername', 'txtFirstName', 'txtLastName', 'txtPass', 'txtConfirmPass', 'numOfBigSets', 'numOfSmallSets', 'workoutSplits'))" />
-
                 <a href="LoginPage.aspx">Log In</a>
+            </div>
+
+            <div class="form-item">
+                <input type="reset"/>            
             </div>
         </div>
 
