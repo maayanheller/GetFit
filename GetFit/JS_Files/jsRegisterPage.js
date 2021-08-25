@@ -1,14 +1,15 @@
 ﻿// Validate all fields on registration field
-function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm, bigMuscleSets, smallMuscleSets, workoutSplit) {
+function validate(usernameId, firstNameId, lastNameId, passwordId, passwordConfirmId, bigMuscleSetsId, smallMuscleSetsId, muscleGroupName, workoutSplitId) {
 
     var username = document.getElementById(usernameId).value;
     var firstName = document.getElementById(firstNameId).value;
     var lastName = document.getElementById(lastNameId).value;
-    var pass = document.getElementById(password).value;
-    var passConf = document.getElementById(passwordConfirm).value;
-    var bigMuscles = document.getElementById(bigMuscleSets).value;
-    var smallMuscles = document.getElementById(smallMuscleSets).value;
-    var workSplit = document.getElementById(workoutSplit).value;
+    var pass = document.getElementById(passwordId).value;
+    var passConf = document.getElementById(passwordConfirmId).value;
+    var bigMuscles = document.getElementById(bigMuscleSetsId).value;
+    var smallMuscles = document.getElementById(smallMuscleSetsId).value;
+    var muscleGroup = document.querySelector('input[name="' + muscleGroupName + '"]:checked');
+    var workSplit = document.getElementById(workoutSplitId).value;
 
     if (username.trim() == "") {
         console.log("name not provided");
@@ -22,7 +23,7 @@ function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm
     }
 
     if (NoSpecialKey(username.trim())) {
-        alert("Username should not contain special keys!")
+        alert("Username should not contain special keys, and no spaces in between letters!")
         return false;
     }
 
@@ -32,7 +33,7 @@ function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm
     }
 
     if (onlyEnglishLetters(firstName.trim())) {
-        alert("First name should contain only letters!")
+        alert("First name should contain only letters, and no spaces in between letters!")
         return false;
     }
 
@@ -42,7 +43,7 @@ function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm
     }
 
     if (onlyEnglishLetters(lastName.trim())) {
-        alert("Last name should contain only letters!");
+        alert("Last name should contain only letters, and no spaces in between letters!");
         return false;
     }
 
@@ -69,6 +70,10 @@ function validate(usernameId, firstNameId, lastNameId, password, passwordConfirm
     if (smallMuscles == "") {
         alert("Please enter how much sets you do for small muscles!");
         return false;
+    }
+
+    if (muscleGroup == null) {
+        alert("Please enter favourite muscle group!")
     }
 
     if (workSplit == "") {

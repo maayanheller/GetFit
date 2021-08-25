@@ -19,7 +19,7 @@ public class DBFunctions
         conn.Close();
     }
 
-    public static bool doesUsernameExists(string query)
+    public static bool CheckIfValuesExist(string query)
     {
         bool usernameExists;
         SqlConnection conn = new SqlConnection(connectionString);

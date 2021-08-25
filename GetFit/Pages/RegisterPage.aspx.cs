@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 public partial class Pages_Default : System.Web.UI.Page
 {
@@ -34,7 +30,7 @@ public partial class Pages_Default : System.Web.UI.Page
 
             string nameCheckQuery = "SELECT UserName FROM tblLifters WHERE UserName='" + username + "' AND code='" + code + "'";
 
-            if (!DBFunctions.doesUsernameExists(nameCheckQuery))
+            if (!DBFunctions.CheckIfValuesExist(nameCheckQuery))
             {
                 if (Request.Form["numOfSmallSets"] != null)
                 {

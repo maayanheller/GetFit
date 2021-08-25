@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Pages_Default : System.Web.UI.Page
 {
@@ -13,6 +9,15 @@ public partial class Pages_Default : System.Web.UI.Page
         {
             Login();
         }
+
+        else
+        {
+            if (Request.Cookies["siteLogin"] != null)
+            {
+                Session["UserName"] = Request.Cookies["siteLogin"].Value;
+                Response.Redirect("Homepage.aspx");
+            }
+        }
     }
 
     protected void Login()
@@ -21,19 +26,12 @@ public partial class Pages_Default : System.Web.UI.Page
         string UserName = Request.Form["txtUserName"];
         string code = Request.Form["txtPass"];
 
-        if (Request.Cookies["siteLogin"] != null)
-        {
-            Session["UserName"] = Request.Cookies["siteLogin"].Value;
-            Response.Redirect("Homepage.aspx");
-        }
-
-
         if (UserName != null && code != null)
         {
             // Search in DB a User with the entered UserName and code
             query = "SELECT UserName FROM tblLifters WHERE UserName='" + UserName.Trim() + "' AND code='" + code + "'";
 
-            if (DBFunctions.doesUsernameExists(query))
+            if (!DBFunctions.CheckIfValuesExist(query))
             {
                 login_error_message.Visible = true;
             }
